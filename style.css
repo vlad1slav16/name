@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none; 
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(26,14,1,1) 100%);
+    width: 100%;
+    min-height: 100%; /* Минимальная высота на 100% высоты окна */
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+    flex: 1; /* Позволяем контейнеру занимать оставшееся пространство */
+}
+
+header {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo, .footer .blocks .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+header nav {
+    width: 50%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+}
+
+header nav ul a {
+    color: #fff;
+}
+
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #dd7200;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    left: -15px; 
+}
+
+header nav ul li:not(.active):not(.btn) a {
+    border-bottom: 5px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #dc7000;
+}
+
+header nav ul li.btn a, .email .block button {
+    background: #FA9021;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+
+header nav ul li.btn a:hover, .email .block button:hover {
+    background: #dd7200;
+}
+
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info {
+    width: 530px;
+    padding-top: 70px;
+}
+
+.hero--info h2 {
+    color: #E87D0E;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.hero--info p {
+    font-weight: 500;
+    line-height: 170%;
+    margin: 30px 0;
+}
+
+.hero--info .btn, 
+.hero-about .info .btn {
+    background: #FA8305;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease, transform 0.5s ease;
+    font-size: 18px;
+}
+
+.hero--info .btn:hover, .hero-about .info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+.hero img {
+    position: absolute;
+    top: -150px;
+    right: 0;
+    z-index: 1;
+}
+/* секция с играми */
+.trending {
+    padding-top: 50px ;
+}
+
+.trending h3 {
+    font-weight: 600;
+    font-size: 31px;
+}
+
+.trending .see-all, 
+.projects .see-all{
+    color: #fff;
+    background: #25211d;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+
+.trending .see-all:hover,
+.projects .see-all:hover {
+    transform: scale(1.1);
+}
+
+.trending .games {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.trending .games span {
+    display: block;
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.trending .games span img {
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+}
+
+.big-text {
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+}
+
+.banner {
+    padding: 80px;
+}
+
+.banner h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 555px;
+}
+
+.banner img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.features {
+    background: url('/img/fon.png') no-repeat center fixed;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.features h3, 
+.features p{
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features h3 {
+    font-size: 30px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 15px;
+}
+
+.projects {
+    padding: 100px 0;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.projects .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.projects .see-all{
+    float: none;
+    width: 110px;
+    text-align: center;
+    margin: auto;
+}
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #1C140F;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 380px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -105px;
+    z-index: 1;
+    padding-right: 120px;
+}
+
+.email .block input::placeholder {
+    color: #898989;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+/*footer*/
+.footer {
+    background: #000000; 
+    padding: 50px 0; 
+    color: #ffffff; 
+}
+
+.footer .blocks {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+.footer .blocks .logo {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.footer .blocks p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+.footer .blocks h4 {
+    font-size: 17px; 
+}
+
+.footer .blocks ul {
+    list-style: none;
+}
+
+.footer .blocks ul li {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+.footer hr {
+    margin: 30px;
+    border: 0;
+    height: 0.6px;
+    background: #ccc;
+}
+
+.footer > p {
+    text-align: center;
+}
+
+/*страница про нас */
+.hero-about {
+    position: relative;
+}
+.hero-about .info {
+    width: 500px;
+    padding: 250px 0;
+}
+
+.hero-about .info h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.hero-about .info .btn {
+    margin-top: 20px;
+}
+
+.hero-about img {
+    position: absolute;
+    right: -310px;
+    top: 50px;
+    width: 70%;
+    height: 70%;
+}
+
+.work {
+    padding: 80px 0;
+}
+
+.work h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.work .blocks {
+    display: flex; /* Устанавливаем flex-контейнер для всех блоков */
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку, если не хватает места */
+    gap: 20px; /* Промежуток между блоками */
+}
+
+.work .block {
+    flex: 1; /* Позволяет блокам занимать равное пространство */
+    min-width: 250px; /* Минимальная ширина блока */
+    padding: 20px; /* Отступы внутри блока *,/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для визуального эффекта */
+    border-radius: 8px; /* Закругленные углы */
+}
+
+.work .badge {
+    margin-right: 10px; /* Отступ между значком и заголовком */
+}
+
+.badge {
+    display: inline-block; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    color: white; 
+    text-align: center; 
+}
+
+.purple {
+    background-color: purple; /* Фоновый цвет */
+}
+
+.brown {
+    background-color: #00DC8D;
+}
+
+.green {
+    background-color: #DC4200;
+}
+
+.work h3 {
+    margin: 10px;
+    left: -10px;
+}
+
+.work p {
+    margin: auto
+}
+
+.ractangle {
+    background: #1c140f;
+    position: relative;
+    padding: 20px;
+    position: relative;
+    
+}
+
+.lorem {
+    flex: 1; /* Занимает оставшееся пространство */
+    margin-left: 20px; /* Отступ между изображением и текстом */
+    width: 500px; /* Ширина текста */
+    padding: 250px 0; /* Отступы сверху и снизу */
+}
+
+.rectangle img {
+    position: absolute; /* Позиционируем изображение абсолютно */
+    top: 150px; /* Положение сверху */
+    left: 0; /* Положение слева */
+    max-height: 500px; /* Максимальная высота изображения */
+    width: 500px; /* Ширина изображения */
+}
+
+.rectangle {
+    padding: 20px; /* Отступы для внешнего контейнера */
+}
+
+.block_qur {
+    background-color: #1C140F; /* Цвет фона */
+    border-radius: 15px; /* Закругленные края */
+    padding: 20px; /* Отступы внутри блока */
+    margin: 10px; /* Отступы между блоками */
+    text-align: center; /* Центрирование текста */
+    width: 400px; /* Ширина блока */
+}
+
+.block_qur img {
+    width: 100%; /* Изображение занимает всю ширину блока */
+    border-radius: 15px; /* Закругленные края изображения */
+}
+
+.block_qur {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.qur h3 {
+    font-size: 31px;
+    font-weight: 400;
+}
+
